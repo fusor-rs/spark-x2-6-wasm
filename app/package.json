@@ -1,0 +1,6 @@
+{
+  "name": "spark-x2-6-app",
+  "private": true,
+  "type": "module",
+  "devDependencies": { "esbuild": "0.28.2" }
+}
