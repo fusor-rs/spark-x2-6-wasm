@@ -72,7 +72,12 @@ target/release/spark-x2-6 chat dist/model fixtures/conversations.json
 
 ## How fast is it
 
-On an Apple M4 Pro in headless Chrome on eight threads (`web-threaded-relaxed`), a question of 46 prompt tokens starts its reply in 0.10 s and writes 91 tokens a second; a follow-up that thinks first, 117 prompt tokens with the conversation so far, starts in 0.24 s and writes 95 a second; the demo's thinking reply, 300 tokens, starts in 0.20 s and writes 70 a second. A revisit loads the 1921 MB bundle from the browser's storage in 2.0 s. Every fixed reply states the facts it is asked for, and every prompt is the reference's token for token.
+On an Apple M4 Pro in headless Chrome on eight threads (`web-threaded-relaxed`), a question of 46 prompt tokens starts its reply in 0.10 s and writes 91 tokens a second; a follow-up that thinks first, 117 prompt tokens with the conversation so far, starts in 0.24 s and writes 95 a second; the demo's thinking reply, 300 tokens, starts in 0.20 s and writes 70 a second. A revisit loads the 1921 MB bundle from the browser's storage in 2.0 s. Every fixed reply states the facts it is asked for, and every prompt is the reference's token for token:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/benchmarks/benchmarks-dark.png">
+  <img src="assets/benchmarks/benchmarks.png" alt="spark-x2-6-wasm on an Apple M4 Pro, in Chrome on eight threads: the first token of a question's reply in 0.10 s, of a follow-up's in 0.24 s, of the demo's in 0.20 s; 91, 95 and 70 tokens written per second. Download: 1921 MB against the 3415 MB checkpoint. Prompts: 3 of 3 token for token the reference's." width="880">
+</picture>
 
 These are the figures of one `just e2e` run and one `just demo` run (a fresh profile, other work on the machine); `just bench` breaks a turn down by stage natively.
 

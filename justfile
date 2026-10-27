@@ -60,7 +60,7 @@ demo: model runtimes page
     cd vendor/fusor-ai/packages/e2e && npm ci --no-audit --no-fund --silent && npx playwright install chromium
     FFMPEG=$(uv run --no-project --with imageio-ffmpeg==0.6.0 python -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())') node scripts/demo.mjs
 
-# The README's banner, light and dark.
+# The README's banner and benchmark summary, light and dark.
 images:
     cd vendor/fusor-ai/packages/e2e && npm ci --no-audit --no-fund --silent && npx playwright install chromium
     node scripts/render-images.mjs

@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const IMAGES = [
   { page: '../assets/brand/banner.html', width: 1280, height: 400, name: 'banner' },
+  { page: '../assets/benchmarks/benchmarks.html', width: 1400, height: 760, name: 'benchmarks' },
 ];
 
 const browser = await chromium.launch();
